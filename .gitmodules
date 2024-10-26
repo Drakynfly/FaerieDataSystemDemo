@@ -1,6 +1,6 @@
 [submodule "Plugins/FaerieDataSystem"]
 	path = Plugins/FaerieDataSystem
-	url = https://github.com/Drakynfly/FaerieDataSystemPublic
+	url = https://github.com/Drakynfly/FaerieDataSystem
 [submodule "Plugins/Squirrel"]
 	path = Plugins/Squirrel
 	url = git@github.com:Drakynfly/SquirrelUE.git

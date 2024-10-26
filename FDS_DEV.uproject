@@ -1,6 +1,6 @@
 {
 	"FileVersion": 3,
-	"EngineAssociation": "5.3",
+	"EngineAssociation": "5.4",
 	"Category": "ProjectFaerie.Development",
 	"Description": "Development project for project faerie data system plugins.",
 	"DisableEnginePluginsByDefault": true,
@@ -96,6 +96,10 @@
 		},
 		{
 			"Name": "RiderSourceCodeAccess",
+			"Enabled": true
+		},
+		{
+			"Name": "StructUtils",
 			"Enabled": true
 		},
 		{
