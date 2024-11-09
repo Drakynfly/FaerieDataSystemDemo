@@ -4,3 +4,6 @@
 [submodule "Plugins/Squirrel"]
 	path = Plugins/Squirrel
 	url = git@github.com:Drakynfly/SquirrelUE.git
+[submodule "Plugins/Flakes"]
+	path = Plugins/Flakes
+	url = git@github.com:Drakynfly/Flakes.git

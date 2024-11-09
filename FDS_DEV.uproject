@@ -109,6 +109,10 @@
 		{
 			"Name": "TextureFormatOodle",
 			"Enabled": true
+		},
+		{
+			"Name": "ACLPlugin",
+			"Enabled": true
 		}
 	],
 	"TargetPlatforms": [

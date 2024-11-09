@@ -8,6 +8,7 @@ public class FDS_DEV : ModuleRules
 	{
 		PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
 
+		// Engine dependencies
 		PublicDependencyModuleNames.AddRange(new []
 		{
 			"Core",
@@ -15,7 +16,13 @@ public class FDS_DEV : ModuleRules
 			"Engine",
 			"InputCore",
 			"GameplayTags",
-			"StructUtils",
+			"StructUtils"
+		});
+
+		// Plugin dependencies
+		PublicDependencyModuleNames.AddRange(new []
+		{
+			"FaerieInventory",
 			"Squirrel"
 		});
 	}
