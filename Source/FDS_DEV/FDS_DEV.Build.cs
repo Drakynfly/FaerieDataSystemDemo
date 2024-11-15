@@ -16,6 +16,9 @@ public class FDS_DEV : ModuleRules
 			"Engine",
 			"InputCore",
 			"GameplayTags",
+			"StructUtils",
+			"UMG",
+			"SlateCore",
 			"StructUtils"
 		});
 
@@ -23,7 +26,8 @@ public class FDS_DEV : ModuleRules
 		PublicDependencyModuleNames.AddRange(new []
 		{
 			"FaerieInventory",
-			"Squirrel"
+			"Squirrel",
+			"FaerieItemData"
 		});
 	}
 }

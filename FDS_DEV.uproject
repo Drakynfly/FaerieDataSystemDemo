@@ -1,6 +1,6 @@
 {
 	"FileVersion": 3,
-	"EngineAssociation": "5.4",
+	"EngineAssociation": "5.5",
 	"Category": "ProjectFaerie.Development",
 	"Description": "Development project for project faerie data system plugins.",
 	"DisableEnginePluginsByDefault": true,
