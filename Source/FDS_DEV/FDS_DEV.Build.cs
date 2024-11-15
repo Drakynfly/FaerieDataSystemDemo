@@ -22,6 +22,7 @@ public class FDS_DEV : ModuleRules
 		// Plugin dependencies
 		PublicDependencyModuleNames.AddRange(new []
 		{
+			"FaerieEquipment",
 			"FaerieInventory",
 			"Squirrel"
 		});

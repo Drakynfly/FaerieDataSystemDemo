@@ -6,6 +6,7 @@
 #include "InventoryDataStructs.h"
 #include "FaerieDataSaveGameExample.generated.h"
 
+class UFaerieEquipmentManager;
 class UFaerieItemContainerBase;
 
 /**
@@ -22,6 +23,12 @@ public:
 
 	UFUNCTION(BlueprintCallable, Category = "FaerieDataSaveGameExample")
 	void Write(UFaerieItemContainerBase* Container);
+
+	UFUNCTION(BlueprintCallable, Category = "FaerieDataSaveGameExample")
+	void ReadEquipment(const UFaerieEquipmentManager* Equipment);
+
+	UFUNCTION(BlueprintCallable, Category = "FaerieDataSaveGameExample")
+	void WriteEquipment(UFaerieEquipmentManager* Equipment);
 
 protected:
 	UPROPERTY()
