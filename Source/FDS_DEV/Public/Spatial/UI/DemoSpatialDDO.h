@@ -15,9 +15,6 @@ class FDS_DEV_API UDemoSpatialDDO : public UDragDropOperation
 {
 	GENERATED_BODY()
 public:
-
-	virtual void Dragged_Implementation(const FPointerEvent& PointerEvent) override;
-	
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	FIntPoint SourcePoint;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
