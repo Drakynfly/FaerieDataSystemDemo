@@ -15,10 +15,10 @@ class FDS_DEV_API UDemoSpatialGrid : public UUserWidget
 {
 	GENERATED_BODY()
 public:
-	virtual FReply NativeOnMouseButtonDown(const FGeometry& InGeometry, const FPointerEvent& InMouseEvent) override;
-	virtual bool NativeOnDrop(const FGeometry& InGeometry, const FDragDropEvent& InDragDropEvent, UDragDropOperation* InOperation) override;
 	virtual void NativeOnDragDetected(const FGeometry& InGeometry, const FPointerEvent& InMouseEvent, UDragDropOperation*& OutOperation) override;
-	
+	UFUNCTION(BlueprintCallable)
+	UWidget* GetChildUnderCursor(const FVector2D AbsolutePosition, UPanelWidget* InPanel);
+
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta=(BindWidget))
 	TObjectPtr<UPanelWidget> GridPanel;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta=(BindWidget)) 

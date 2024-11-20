@@ -3,6 +3,7 @@
 
 #include "Spatial/UI/DemoSpatialGrid.h"
 
+#include "DemoProxyHolder.h"
 #include "InventoryStorageProxy.h"
 #include "Blueprint/WidgetTree.h"
 #include "Components/CanvasPanel.h"
@@ -13,29 +14,16 @@
 #include "Spatial/UI/DemoDraggableBase.h"
 #include "Spatial/UI/DemoSpatialDDO.h"
 
-
-FReply UDemoSpatialGrid::NativeOnMouseButtonDown(const FGeometry& InGeometry, const FPointerEvent& InMouseEvent)
+UWidget* UDemoSpatialGrid::GetChildUnderCursor(const FVector2D AbsolutePosition, UPanelWidget* InPanel)
 {
-	return Super::NativeOnMouseButtonDown(InGeometry, InMouseEvent);
-}
-
-bool UDemoSpatialGrid::NativeOnDrop(const FGeometry& InGeometry, const FDragDropEvent& InDragDropEvent,
-									UDragDropOperation* InOperation)
-{
-	UDemoSpatialDDO* InDDO = Cast<UDemoSpatialDDO>(InOperation);
-	for (auto& Child : GridPanel->GetAllChildren())
+	for (auto& Child : InPanel->GetAllChildren())
 	{
-		if (Child->GetCachedGeometry().IsUnderLocation(InDragDropEvent.GetScreenSpacePosition()))
+		if (Child->GetCachedGeometry().IsUnderLocation(AbsolutePosition))
 		{
-			if(const auto* GridSlot = Cast<UUniformGridSlot>(Child->Slot))
-			{
-				InDDO->TargetPoint = FIntPoint(GridSlot->GetColumn(), GridSlot->GetRow());
-			}
-			break;
+			return Child;
 		}
 	}
-
-	return Super::NativeOnDrop(InGeometry, InDragDropEvent, InOperation);
+	return nullptr;
 }
 
 void UDemoSpatialGrid::NativeOnDragDetected(const FGeometry& InGeometry, const FPointerEvent& InMouseEvent,
@@ -99,6 +87,10 @@ void UDemoSpatialGrid::NativeOnDragDetected(const FGeometry& InGeometry, const F
              
 					OutOperation->DefaultDragVisual = DragWidget;
 					OutOperation->Pivot = EDragPivot::MouseDown;
+					if(auto* ProxyHolder = Cast<UDemoProxyHolder>(Child))
+					{
+						OutDDO->Proxy = ProxyHolder->Proxy;
+					}
 				}
 			}
 			break;

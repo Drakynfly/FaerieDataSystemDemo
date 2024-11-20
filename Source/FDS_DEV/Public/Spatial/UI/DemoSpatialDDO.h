@@ -18,8 +18,6 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	FIntPoint SourcePoint;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	FIntPoint TargetPoint;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	TObjectPtr<UWidget> DragWidget;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	FFaerieItemProxy Proxy;
