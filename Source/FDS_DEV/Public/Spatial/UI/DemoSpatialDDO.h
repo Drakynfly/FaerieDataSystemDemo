@@ -2,7 +2,6 @@
 
 #pragma once
 
-#include "CoreMinimal.h"
 #include "FaerieItemProxy.h"
 #include "Blueprint/DragDropOperation.h"
 #include "DemoSpatialDDO.generated.h"

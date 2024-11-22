@@ -3,20 +3,18 @@
 
 #include "Spatial/UI/DemoSpatialGrid.h"
 
-#include "DemoProxyHolder.h"
+#include "Spatial/UI/DemoProxyHolder.h"
 #include "InventoryStorageProxy.h"
 #include "Blueprint/WidgetTree.h"
-#include "Components/CanvasPanel.h"
 #include "Components/CanvasPanelSlot.h"
 #include "Components/PanelWidget.h"
-#include "Components/UniformGridPanel.h"
 #include "Components/UniformGridSlot.h"
 #include "Spatial/UI/DemoDraggableBase.h"
 #include "Spatial/UI/DemoSpatialDDO.h"
 
 UWidget* UDemoSpatialGrid::GetChildUnderCursor(const FVector2D AbsolutePosition, UPanelWidget* InPanel)
 {
-	for (auto& Child : InPanel->GetAllChildren())
+	for (const auto& Child : InPanel->GetAllChildren())
 	{
 		if (Child->GetCachedGeometry().IsUnderLocation(AbsolutePosition))
 		{
@@ -39,7 +37,7 @@ void UDemoSpatialGrid::NativeOnDragDetected(const FGeometry& InGeometry, const F
 	{
 		if (Child->GetCachedGeometry().IsUnderLocation(ScreenSpacePosition))
 		{
-			if(const auto* GridSlot = Cast<UUniformGridSlot>(Child->Slot))
+			if (const auto* GridSlot = Cast<UUniformGridSlot>(Child->Slot))
 			{
 				OutDDO->SourcePoint = FIntPoint(GridSlot->GetColumn(), GridSlot->GetRow());
 				OutDDO->Payload = Child;
@@ -48,24 +46,24 @@ void UDemoSpatialGrid::NativeOnDragDetected(const FGeometry& InGeometry, const F
 		}
 	}
 	
-	for (auto& Child : IconPanel->GetAllChildren())
+	for (const auto& Child : IconPanel->GetAllChildren())
 	{
 		if (Child->GetCachedGeometry().IsUnderLocation(ScreenSpacePosition))
 		{
 			auto DragWidget = CreateWidget<UDemoDraggableBase>(GetOwningPlayer(), UDemoDraggableBase::StaticClass());
-			if (auto* DraggableBase = Cast<UUserWidget>(Child))
+			if (const auto* DraggableBase = Cast<UUserWidget>(Child))
 			{
 				// Get the original widget's absolute size in screen space
-				FVector2D OriginalScreenSize = Child->GetCachedGeometry().GetAbsoluteSize();
+				const FVector2D OriginalScreenSize = Child->GetCachedGeometry().GetAbsoluteSize();
             
 				// Get the original widget's desired size
-				FVector2D OriginalDesiredSize = Child->GetDesiredSize();
+				const FVector2D OriginalDesiredSize = Child->GetDesiredSize();
             
 				// Calculate the current scale factor being applied by the ScaleBox
-				FVector2D CurrentScale = OriginalScreenSize / OriginalDesiredSize;
+				const FVector2D CurrentScale = OriginalScreenSize / OriginalDesiredSize;
 				// Get widgets from the Child widget (DraggableBase) instead of IconPanel
-				auto TargetIcon = Cast<UImage>(DraggableBase->WidgetTree->FindWidget(TEXT("Icon")));
-				auto TargetIconSize = Cast<USizeBox>(DraggableBase->WidgetTree->FindWidget(TEXT("IconSize")));
+				const auto TargetIcon = Cast<UImage>(DraggableBase->WidgetTree->FindWidget(TEXT("Icon")));
+				const auto TargetIconSize = Cast<USizeBox>(DraggableBase->WidgetTree->FindWidget(TEXT("IconSize")));
                
 				if (TargetIcon && TargetIconSize)
 				{
@@ -87,7 +85,7 @@ void UDemoSpatialGrid::NativeOnDragDetected(const FGeometry& InGeometry, const F
              
 					OutOperation->DefaultDragVisual = DragWidget;
 					OutOperation->Pivot = EDragPivot::MouseDown;
-					if(auto* ProxyHolder = Cast<UDemoProxyHolder>(Child))
+					if (const auto* ProxyHolder = Cast<UDemoProxyHolder>(Child))
 					{
 						OutDDO->Proxy = ProxyHolder->Proxy;
 					}

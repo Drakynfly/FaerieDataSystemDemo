@@ -2,7 +2,6 @@
 
 #pragma once
 
-#include "CoreMinimal.h"
 #include "InventoryStorageProxy.h"
 #include "Blueprint/UserWidget.h"
 #include "DemoProxyHolder.generated.h"
@@ -17,5 +16,5 @@ class FDS_DEV_API UDemoProxyHolder : public UUserWidget
 
 public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Item Data")
-	UInventoryStackProxy* Proxy; 
+	TObjectPtr<UInventoryStackProxy> Proxy; 
 };
