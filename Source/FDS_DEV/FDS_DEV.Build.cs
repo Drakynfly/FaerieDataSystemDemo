@@ -18,8 +18,7 @@ public class FDS_DEV : ModuleRules
 			"GameplayTags",
 			"StructUtils",
 			"UMG",
-			"SlateCore",
-			"StructUtils"
+			"SlateCore"
 		});
 
 		// Plugin dependencies
