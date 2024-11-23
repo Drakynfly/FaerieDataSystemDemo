@@ -16,7 +16,9 @@ public class FDS_DEV : ModuleRules
 			"Engine",
 			"InputCore",
 			"GameplayTags",
-			"StructUtils"
+			"StructUtils",
+			"UMG",
+			"SlateCore"
 		});
 
 		// Plugin dependencies
@@ -24,7 +26,8 @@ public class FDS_DEV : ModuleRules
 		{
 			"FaerieEquipment",
 			"FaerieInventory",
-			"Squirrel"
+			"Squirrel",
+			"FaerieItemData"
 		});
 	}
 }
