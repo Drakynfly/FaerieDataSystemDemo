@@ -2,7 +2,6 @@
 
 #pragma once
 
-#include "InstancedStruct.h"
 #include "Squirrel.h"
 #include "GameFramework/Actor.h"
 #include "StructUtils/InstancedStruct.h"
