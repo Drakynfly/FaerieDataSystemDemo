@@ -23,6 +23,9 @@ class FDS_DEV_API UBPTimerStruct : public UBlueprintFunctionLibrary
 
 public:
 	UFUNCTION(BlueprintCallable)
+	static void TriggerCPPBreakpoint();
+
+	UFUNCTION(BlueprintCallable)
 	static void Reset(UPARAM(ref) FBlueprintTimer& Timer);
 
 	UFUNCTION(BlueprintPure)
