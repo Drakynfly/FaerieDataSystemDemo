@@ -14,8 +14,6 @@ class FDS_DEV_API UDemoSpatialGrid : public UUserWidget
 	GENERATED_BODY()
 
 public:
-	virtual void NativeOnDragDetected(const FGeometry& InGeometry, const FPointerEvent& InMouseEvent, UDragDropOperation*& OutOperation) override;
-
 	UFUNCTION(BlueprintCallable, Category = "Spatial Grid")
 	UWidget* GetCellUnderCursor(const FVector2D AbsolutePosition) const;
 
