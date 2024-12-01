@@ -2,8 +2,6 @@
 
 #include "Spatial/UI/DemoSpatialGrid.h"
 
-#include "Components/ScaleBox.h"
-
 UWidget* UDemoSpatialGrid::GetCellUnderCursor(const FVector2D AbsolutePosition) const
 {
 	for (auto&& Child : CellWidgets)

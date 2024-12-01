@@ -23,6 +23,8 @@ public:
 	UPROPERTY(BlueprintAssignable, Category = "HotBarManager")
 	FOnSelectedSlotChanged OnSelectedSlotChanged;
 
+	FOnSelectedSlotChangedNative::RegistrationType& GetOnSelectedSlotChangedNative() { return OnSelectedSlotChangedNative; }
+
 private:
 	TObjectPtr<UFaerieEquipmentSlot> SelectedSlot;
 
