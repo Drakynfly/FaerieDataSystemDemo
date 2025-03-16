@@ -113,6 +113,14 @@
 		{
 			"Name": "ACLPlugin",
 			"Enabled": true
+		},
+		{
+			"Name": "UMGWidgetPreview",
+			"Enabled": true
+		},
+		{
+			"Name": "Iris",
+			"Enabled": true
 		}
 	],
 	"TargetPlatforms": [
